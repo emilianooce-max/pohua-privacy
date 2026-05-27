@@ -96,7 +96,6 @@ En el futuro podríamos agregar telemetría **opcional y anónima** (por ejemplo
 Como toda la información vive en tu dispositivo, tienes control total:
 
 - **Acceso:** abre Pohua y verás todos tus datos.
-- **Modificación:** puedes editar transacciones desde la app.
 - **Eliminación parcial:** puedes borrar transacciones individuales desde la app.
 - **Eliminación total:** desinstalar Pohua elimina por completo la base de datos del dispositivo.
 
