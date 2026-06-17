@@ -1,6 +1,6 @@
 # Política de Privacidad de Pohua
 
-**Última actualización:** 8 de junio de 2026
+**Última actualización:** 17 de junio de 2026
 
 Pohua (“nosotros” o “la app”) es una aplicación de Android para llevar el control de gastos e ingresos personales, leyendo las notificaciones que las apps de bancos envían a tu celular. Esta política explica qué información procesa la app, cómo se procesa y qué control tienes sobre ella.
 
@@ -20,18 +20,22 @@ Pohua (“nosotros” o “la app”) es una aplicación de Android para llevar 
 
 ## 2. Información que Pohua procesa
 
-Pohua usa el permiso del sistema **“Acceso a notificaciones”** (`BIND_NOTIFICATION_LISTENER_SERVICE`) para leer el contenido de las notificaciones que llegan a tu celular, únicamente de las aplicaciones bancarias o de fintech que tú decides activar dentro de Pohua. Por ejemplo: Nu México, Revolut, Global66, Naranja X y similares. También procesa notificaciones de Gmail cuando estas contienen correos de tarjetas de crédito (por ejemplo, Naranja X Crédito).
+Pohua usa el permiso del sistema **"Acceso a notificaciones"** (`BIND_NOTIFICATION_LISTENER_SERVICE`) para detectar automáticamente tus transacciones a partir de las notificaciones que llegan a tu celular.
 
-A partir del texto de esas notificaciones, Pohua extrae automáticamente:
+Para reconocer transacciones de cualquier banco o aplicación financiera —incluso de formatos que aún no conoce— Pohua analiza el contenido de las notificaciones directamente en tu dispositivo. Las notificaciones que claramente no son financieras (mensajería, redes sociales, noticias, navegación, etc.) se descartan de inmediato, sin guardarse. Solo se conservan en el dispositivo las que parecen una transacción, para mostrártelas y que tú las confirmes o edites.
 
-- Fecha y hora de la transacción
+Todo este análisis ocurre dentro de tu celular. El contenido de tus notificaciones nunca sale del dispositivo, con la única excepción de la telemetría opcional de la Sección 7 (si tú la activas), que solo envía plantillas anónimas, sin datos reales.
+
+De las notificaciones que son transacciones, Pohua extrae automáticamente:
+
+- Fecha y hora
 - Monto y moneda
 - Tipo de movimiento (gasto, ingreso, transferencia)
 - Cuenta de origen
-- Contraparte (nombre del comercio o persona, cuando aparece en la notificación)
+- Contraparte (comercio o persona, cuando aparece)
 - Texto original de la notificación (para auditoría dentro de la app)
 
-**Pohua no accede a tus correos directamente, ni a la API de Gmail, ni a tu cuenta del banco.** Solo lee notificaciones que ya están presentes en tu dispositivo.
+Pohua también procesa notificaciones de Gmail cuando contienen correos de tarjetas de crédito (por ejemplo, Naranja X Crédito). Pohua no accede a tus correos directamente, ni a la API de Gmail, ni a tu cuenta del banco. Solo lee notificaciones que ya están en tu dispositivo.
 
 ---
 
@@ -92,7 +96,7 @@ Pohua incluye una función de telemetría **opcional** para ayudarnos a mejorar 
 
 Si decides activarla, Pohua envía a un servidor propio (controlado por el responsable de la app y alojado en infraestructura de Cloudflare) únicamente lo siguiente:
 
-- **Estructuras anónimas de notificaciones:** plantillas del formato de una notificación que la app no logró interpretar, donde los valores reales (montos, nombres, números de cuenta, saldos) se reemplazan por marcadores **antes** de salir del dispositivo. Sirven para enseñarle a la app a reconocer bancos o formatos nuevos.
+- **Estructuras anónimas de notificaciones:** plantillas del formato de una notificación —ya sea una que la app no logró interpretar, o una que tú confirmas como transacción— donde los valores reales (montos, nombres, números de cuenta, saldos) se reemplazan por marcadores **antes** de salir del dispositivo. Sirven para enseñarle a la app a reconocer bancos o formatos nuevos.
 - **Versión de la app.**
 - **Un identificador aleatorio y rotativo** (cambia aproximadamente cada 30 días) que **no está ligado a tu identidad** ni a tu cuenta; solo agrupa eventos del mismo dispositivo de forma temporal.
 - **Reportes de fallos (crashes):** información técnica del error, depurada de datos personales.
