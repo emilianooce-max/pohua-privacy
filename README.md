@@ -1,6 +1,6 @@
 # Política de Privacidad de Pohua
 
-**Última actualización:** 17 de junio de 2026
+**Última actualización:** 25 de junio de 2026
 
 Pohua (“nosotros” o “la app”) es una aplicación de Android para llevar el control de gastos e ingresos personales, leyendo las notificaciones que las apps de bancos envían a tu celular. Esta política explica qué información procesa la app, cómo se procesa y qué control tienes sobre ella.
 
@@ -10,11 +10,12 @@ Pohua (“nosotros” o “la app”) es una aplicación de Android para llevar 
 
 ## 1. Resumen rápido
 
-- Pohua funciona **100% en tu dispositivo**. De forma predeterminada, no enviamos ningún dato fuera de tu celular.
+- Pohua funciona **en tu dispositivo**. De forma predeterminada, no enviamos ningún dato fuera de tu celular.
+- Puedes activar un **respaldo opcional** de tus datos en **tu propio Google Drive**. Esa copia es **tuya y queda bajo tu control**: nosotros **nunca la vemos ni la recibimos** y **no pasa por ningún servidor de Pohua** (ver sección 3).
 - Incluye una telemetría **opcional y anónima**, **apagada por defecto**, que solo se activa si tú la enciendes y que nunca envía datos personales ni financieros (ver sección 7).
 - **No usamos publicidad ni rastreo**, ni analíticas o reportes de errores de terceros (Firebase, Sentry, etc.).
 - **No compartimos tu información con terceros.**
-- Si desinstalas la app, **todos tus datos del dispositivo desaparecen con ella**.
+- Si desinstalas la app, **todos tus datos del dispositivo desaparecen con ella** (si activaste el respaldo, la copia en tu Google Drive se conserva hasta que tú la borres; ver sección 8).
 
 ---
 
@@ -24,7 +25,7 @@ Pohua usa el permiso del sistema **"Acceso a notificaciones"** (`BIND_NOTIFICATI
 
 Para reconocer transacciones de cualquier banco o aplicación financiera —incluso de formatos que aún no conoce— Pohua analiza el contenido de las notificaciones directamente en tu dispositivo. Las notificaciones que claramente no son financieras (mensajería, redes sociales, noticias, navegación, etc.) se descartan de inmediato, sin guardarse. Solo se conservan en el dispositivo las que parecen una transacción, para mostrártelas y que tú las confirmes o edites.
 
-Todo este análisis ocurre dentro de tu celular. El contenido de tus notificaciones nunca sale del dispositivo, con la única excepción de la telemetría opcional de la Sección 7 (si tú la activas), que solo envía plantillas anónimas, sin datos reales.
+Todo este análisis ocurre dentro de tu celular y el contenido de tus notificaciones no se envía a ningún servidor nuestro. Solo sale de tu dispositivo en dos casos que tú controlas: la telemetría opcional de la Sección 7 (si la activas), que envía plantillas anónimas sin datos reales; y el respaldo opcional de la Sección 3 (si lo activas), que guarda una copia en **tu propio** Google Drive, sin pasar por nosotros.
 
 De las notificaciones que son transacciones, Pohua extrae automáticamente:
 
@@ -43,11 +44,17 @@ Pohua también procesa notificaciones de Gmail cuando contienen correos de tarje
 
 Toda la información procesada por Pohua se guarda **localmente en tu dispositivo**, en una base de datos privada de la aplicación (Room/SQLite dentro del almacenamiento interno protegido por Android, accesible solo por Pohua).
 
-- **No** subimos tus datos a la nube.
-- Por defecto, **no** los enviamos a ningún servidor. La única excepción es la telemetría **opcional** descrita en la sección 7, que está **apagada por defecto** y que nunca incluye tus datos financieros ni el contenido de tus notificaciones.
-- **No** los respaldamos automáticamente en servicios externos.
+- **No** enviamos tus datos a servidores de Pohua. Por defecto, nada de tu información sale del dispositivo.
+- La única información que enviamos a un servidor nuestro es la telemetría **opcional** descrita en la sección 7, que está **apagada por defecto** y que nunca incluye tus datos financieros ni el contenido de tus notificaciones.
 
-Si en una versión futura agregamos respaldo opcional en tu propio Google Drive, actualizaremos esta política y te avisaremos dentro de la app antes de habilitarlo.
+### Respaldo opcional en tu propio Google Drive
+
+Puedes activar un **respaldo opcional** de tus datos. Cuando lo activas, Pohua guarda una copia de tu base de datos en **tu propia cuenta de Google Drive**, en una carpeta privada de datos de la aplicación (*appDataFolder*). Puntos clave:
+
+- **Es tu Drive, bajo tu control.** La copia se sube directamente desde tu dispositivo a tu cuenta de Google. **Nosotros nunca vemos, recibimos ni almacenamos esa copia**, y **no pasa por ningún servidor de Pohua**. A diferencia de la telemetría, aquí no hay intermediario: es una transferencia entre tú y tu propio Google Drive.
+- **Es opcional y la activas tú.** Está apagado mientras no lo enciendas en Ajustes → Copia de seguridad. Una vez activado, la copia puede actualizarse automáticamente (por ejemplo, una vez al día por WiFi); puedes desactivarlo en cualquier momento.
+- **Va a una carpeta de datos de la app.** Esa carpeta (*appDataFolder*) no aparece como archivos normales en Google Drive: no es navegable junto a tus documentos; es un espacio privado que solo gestiona la app.
+- **Puedes borrar esa copia cuando quieras** (ver sección 8).
 
 ---
 
@@ -115,11 +122,14 @@ Como la información es anónima y no está ligada a tu identidad, no podemos vi
 
 ## 8. Tus derechos sobre los datos
 
-Como toda la información vive en tu dispositivo, tienes control total:
+Como tu información vive en tu dispositivo (y, si activaste el respaldo, también en una copia en tu propio Google Drive), tienes control total:
 
 - **Acceso:** abre Pohua y verás todos tus datos.
 - **Eliminación parcial:** puedes borrar transacciones individuales desde la app.
-- **Eliminación total:** desinstalar Pohua elimina por completo la base de datos del dispositivo.
+- **Eliminación total en el dispositivo:** desinstalar Pohua elimina por completo la base de datos de tu teléfono.
+- **Eliminación de la copia de respaldo:** si activaste el respaldo en Google Drive, esa copia **no** se borra al desinstalar la app. Para eliminarla tienes dos vías:
+  - **Desde la app:** Ajustes → Copia de seguridad → **"Borrar respaldos de Drive"** elimina todas las copias guardadas.
+  - **Quitando el acceso desde tu cuenta de Google:** en [myaccount.google.com](https://myaccount.google.com) → "Conexiones con terceros" (o "Apps con acceso a tu cuenta") puedes retirarle a Pohua el acceso a tu Drive y eliminar sus datos. Este permiso se retira desde Google, no desde la app.
 
 Si tienes dudas sobre cómo ejercer estos derechos, escríbenos a **hola@pohua.app**.
 
@@ -139,13 +149,13 @@ Pohua aprovecha las medidas de seguridad nativas de Android:
 
 - La base de datos se encuentra dentro del almacenamiento interno privado de la aplicación, inaccesible para otras apps.
 - El acceso al sistema de notificaciones requiere tu autorización explícita.
-- Los datos no salen de tu dispositivo (salvo la telemetría opcional de la sección 7, si tú la activas), por lo que el principal riesgo es el acceso físico al celular. Te recomendamos usar bloqueo de pantalla (PIN, huella o reconocimiento facial).
+- De forma predeterminada los datos no salen de tu dispositivo. Si activas la telemetría (sección 7) o el respaldo en tu Google Drive (sección 3), esa información viaja **cifrada** (HTTPS): la telemetría hacia nuestro servidor (anónima) y el respaldo hacia tu propia cuenta de Google. El principal riesgo sigue siendo el acceso físico al celular; te recomendamos usar bloqueo de pantalla (PIN, huella o reconocimiento facial).
 
 ---
 
 ## 11. Cambios a esta política
 
-Podemos actualizar esta política con el tiempo, especialmente cuando agreguemos nuevas funcionalidades (por ejemplo, respaldo en Drive). Cuando haya cambios significativos:
+Podemos actualizar esta política con el tiempo, especialmente cuando agreguemos nuevas funcionalidades. Cuando haya cambios significativos:
 
 - Actualizaremos la fecha de “Última actualización” al inicio de este documento.
 - Para cambios que afecten cómo manejamos tus datos, te avisaremos también dentro de la app.
