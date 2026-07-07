@@ -1,5 +1,7 @@
 # Política de Privacidad de Pohua
 
+> 📍 **Esta página se mudó a [pohua.app/privacidad](https://pohua.app/privacidad).** Esta copia se conserva solo como respaldo.
+
 **Última actualización:** 7 de julio de 2026
 
 Pohua (“nosotros” o “la app”) es una aplicación de Android para llevar el control de gastos e ingresos personales, leyendo las notificaciones que las apps de bancos envían a tu celular. Esta política explica qué información procesa la app, cómo se procesa y qué control tienes sobre ella.
