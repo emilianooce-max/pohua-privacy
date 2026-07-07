@@ -1,6 +1,6 @@
 # Política de Privacidad de Pohua
 
-**Última actualización:** 25 de junio de 2026
+**Última actualización:** 7 de julio de 2026
 
 Pohua (“nosotros” o “la app”) es una aplicación de Android para llevar el control de gastos e ingresos personales, leyendo las notificaciones que las apps de bancos envían a tu celular. Esta política explica qué información procesa la app, cómo se procesa y qué control tienes sobre ella.
 
@@ -10,7 +10,8 @@ Pohua (“nosotros” o “la app”) es una aplicación de Android para llevar 
 
 ## 1. Resumen rápido
 
-- Pohua funciona **en tu dispositivo**. De forma predeterminada, no enviamos ningún dato fuera de tu celular.
+- Para usar Pohua **inicias sesión con tu cuenta de Google**. Guardamos tu nombre, correo y foto de perfil **en tu dispositivo** para identificar tu cuenta (ver la sección "Cuenta e inicio de sesión").
+- Pohua funciona **en tu dispositivo**. De forma predeterminada, no enviamos tu información financiera fuera de tu celular.
 - Puedes activar un **respaldo opcional** de tus datos en **tu propio Google Drive**. Esa copia es **tuya y queda bajo tu control**: nosotros **nunca la vemos ni la recibimos** y **no pasa por ningún servidor de Pohua** (ver sección 3).
 - Incluye una telemetría **opcional y anónima**, **apagada por defecto**, que solo se activa si tú la enciendes y que nunca envía datos personales ni financieros (ver sección 7).
 - **No usamos publicidad ni rastreo**, ni analíticas o reportes de errores de terceros (Firebase, Sentry, etc.).
@@ -58,11 +59,24 @@ Puedes activar un **respaldo opcional** de tus datos. Cuando lo activas, Pohua g
 
 ---
 
+## 3 bis. Cuenta e inicio de sesión
+
+Para usar Pohua inicias sesión con **tu cuenta de Google** (Sign in with Google). Al hacerlo, la app recibe de Google y **guarda en tu dispositivo**:
+
+- Tu **nombre** y **foto de perfil** (para mostrarte con qué cuenta estás usando la app).
+- Tu **correo electrónico**.
+- El **identificador de tu cuenta de Google** (un ID técnico que distingue tu cuenta).
+
+**Para qué se usa:** identificar tu cuenta dentro de la app y ligar tus datos locales a ella (por ejemplo, para avisarte si abres la app con una cuenta distinta a la que usaste antes). Esta información se guarda en el almacenamiento privado de la app en tu dispositivo; **no la publicamos, no la compartimos con terceros y no la vendemos**. **No guardamos tu contraseña de Google** (el inicio de sesión lo maneja Google). Al iniciar sesión también autorizas el acceso a la carpeta privada de la app en **tu propio** Google Drive, pero solo si activas el respaldo (sección 3).
+
+Si más adelante habilitamos las versiones de pago, tu cuenta servirá para reconocer tu licencia; los pagos los seguirá manejando Google Play (sección 6).
+
+---
+
 ## 4. Información que Pohua **no** procesa
 
 Para que quede claro, Pohua **no** recolecta, procesa ni accede a:
 
-- Tu nombre, correo electrónico ni datos de identificación personal
 - Tus contactos
 - Tu ubicación geográfica
 - Tu cámara, micrófono o galería
