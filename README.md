@@ -2,7 +2,7 @@
 
 > 📍 **Esta página se mudó a [pohua.app/privacidad](https://pohua.app/privacidad).** Esta copia se conserva solo como respaldo.
 
-**Última actualización:** 7 de julio de 2026
+**Última actualización:** 3 de agosto de 2026
 
 Pohua (“nosotros” o “la app”) es una aplicación de Android para llevar el control de gastos e ingresos personales, leyendo las notificaciones que las apps de bancos envían a tu celular. Esta política explica qué información procesa la app, cómo se procesa y qué control tienes sobre ella.
 
@@ -119,7 +119,8 @@ Pohua incluye una función de telemetría **opcional** para ayudarnos a mejorar 
 
 Si decides activarla, Pohua envía a un servidor propio (controlado por el responsable de la app y alojado en infraestructura de Cloudflare) únicamente lo siguiente:
 
-- **Estructuras anónimas de notificaciones:** plantillas del formato de una notificación —ya sea una que la app no logró interpretar, o una que tú confirmas como transacción— donde los valores reales (montos, nombres, números de cuenta, saldos) se reemplazan por marcadores **antes** de salir del dispositivo. Sirven para enseñarle a la app a reconocer bancos o formatos nuevos.
+- **Estructuras anónimas de notificaciones:** plantillas del formato de una notificación —ya sea una que la app no logró interpretar, una que tú confirmas como transacción, o una que el detector identificó como posible transacción— donde los valores reales (montos, nombres, números de cuenta, saldos) se reemplazan por marcadores **antes** de salir del dispositivo. Sirven para enseñarle a la app a reconocer bancos o formatos nuevos.
+- **La app de origen y señales del detector:** el nombre técnico (nombre de paquete) de la app que emitió la notificación —tu banco o app financiera y, cuando tú confirmas o corriges uno de sus avisos, también una app que no es un banco conocido (por ejemplo, una billetera digital)—, junto con datos técnicos de cada decisión: qué capa del detector procesó el aviso, la clasificación asignada o corregida (por ejemplo, “gasto” o “ingreso”), qué campo editaste (nunca el valor que escribiste) y si el aviso se detectó como duplicado. Nunca se envía el contenido del aviso ni ningún monto.
 - **Versión de la app.**
 - **Un identificador aleatorio y rotativo** (cambia aproximadamente cada 30 días) que **no está ligado a tu identidad** ni a tu cuenta; solo agrupa eventos del mismo dispositivo de forma temporal.
 - **Reportes de fallos (crashes):** información técnica del error, depurada de datos personales.
